@@ -1,0 +1,452 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fffbe2;
+  --foreground: #333333;
+  --primary: #ff5a51;
+  --primary-light: #ff7a73;
+  --primary-dark: #e04940;
+  --secondary: #ffe11f;
+  --secondary-light: #fff05c;
+  --secondary-dark: #e6c800;
+  --muted: #94a3b8;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --card: #ffffff;
+  --card-foreground: #333333;
+  --accent: #fff8d6;
+  --accent-foreground: #333333;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --ring: #ff5a51;
+  --radius: 0.5rem;
+  --neon-dark: #e04940;
+  --neon-main: #ff5a51;
+  --neon-light: #ff7a73;
+}
+
+.dark {
+  --background: #333333;
+  --foreground: #f8fafc;
+  --primary: #ff5a51;
+  --primary-light: #ff7a73;
+  --primary-dark: #e04940;
+  --secondary: #ffe11f;
+  --secondary-light: #fff05c;
+  --secondary-dark: #e6c800;
+  --muted: #64748b;
+  --muted-foreground: #94a3b8;
+  --border: #444444;
+  --card: #222222;
+  --card-foreground: #f8fafc;
+  --accent: #444444;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --destructive-foreground: #f8fafc;
+  --ring: #ff5a51;
+  --neon-dark: #e04940;
+  --neon-main: #ff5a51;
+  --neon-light: #ff7a73;
+}
+
+.disable-transition * {
+  transition: none !important;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 90, 81, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 90, 81, 0.3);
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--card);
+  color: var(--primary);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 90, 81, 0.3);
+}
+
+.section-title {
+  font-size: 2.25rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1.25rem;
+  color: var(--primary);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(255, 90, 81, 0.5);
+}
+
+.card {
+  background-color: var(--card);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--border);
+  color: var(--card-foreground);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 90, 81, 0.2);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  background-color: rgba(255, 90, 81, 0.1);
+  color: var(--primary);
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 90, 81, 0.2);
+  transition: all 0.3s;
+}
+
+.badge:hover {
+  background-color: rgba(255, 90, 81, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Photo frame styling */
+.photo-frame {
+  position: relative;
+  padding: 10px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(255, 90, 81, 0.3);
+  max-width: 350px;
+  max-height: 560px;
+}
+
+.photo-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #000;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Update the iPhone frame and desktop frame styles for better proportions */
+
+.iphone-frame {
+  position: relative;
+  width: 100%;
+  max-width: 120px;
+  margin: 0 auto;
+  padding: 8px;
+  background-color: #1a1a1a;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+}
+
+.iphone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 15px;
+  background-color: #1a1a1a;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 10;
+}
+
+.iphone-screen {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #000;
+  aspect-ratio: 9 / 19.5;
+}
+
+.iphone-button {
+  position: absolute;
+  right: -3px;
+  top: 60px;
+  width: 2px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 1px;
+}
+
+.iphone-button:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -25px;
+  width: 2px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 1px;
+}
+
+.iphone-button:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 2px;
+  height: 20px;
+  background-color: #333;
+  border-radius: 1px;
+}
+
+/* Landscape iPhone frame */
+.iphone-landscape-frame {
+  position: relative;
+  width: 260px;
+  height: 140px;
+  padding: 8px;
+  background-color: #1a1a1a;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  margin: auto;
+}
+
+.iphone-landscape-notch {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 60px;
+  background-color: #1a1a1a;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 10;
+}
+
+.iphone-landscape-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.iphone-landscape-button {
+  position: absolute;
+  top: -3px;
+  left: 60px;
+  height: 2px;
+  width: 20px;
+  background-color: #333;
+  border-radius: 1px;
+}
+
+.iphone-landscape-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -25px;
+  height: 2px;
+  width: 20px;
+  background-color: #333;
+  border-radius: 1px;
+}
+
+.iphone-landscape-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  height: 2px;
+  width: 20px;
+  background-color: #333;
+  border-radius: 1px;
+}
+
+/* Desktop frame */
+.desktop-frame {
+  position: relative;
+  width: 100%;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 10px 10px 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+}
+
+.desktop-screen {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.desktop-base {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 10px;
+  background-color: #333;
+  border-radius: 0 0 5px 5px;
+}
+
+/* Project slider */
+.project-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.slider-item {
+  flex: 0 0 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--muted);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-dot.active {
+  background-color: var(--primary);
+  transform: scale(1.2);
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.slider-arrow:hover {
+  background-color: var(--primary);
+}
+
+.slider-arrow.prev {
+  left: 5px;
+}
+
+.slider-arrow.next {
+  right: 5px;
+}
